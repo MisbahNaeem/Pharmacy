@@ -1,0 +1,112 @@
+{%load static%}
+<html> 
+
+<head> 
+    <style> 
+		body, html {
+            height: 100%;
+          }
+          
+          * {
+            box-sizing: border-box;
+          }
+          
+          .bg-img {
+            /* The image used */
+            background-image: url("{% static 'images/img5.5.jpg'%}");
+          
+            /* Control the height of the image */
+            min-height: 680px;
+          
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+          }
+          
+          /* Add styles to the form container */
+          .container {
+            position: absolute;
+            right:200;
+            margin: 30px;
+            max-width: 400px;
+            padding: 59px;
+            background-color: white;
+          }
+          
+          /* Full-width input fields */
+            input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+          }
+          
+          input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+          }
+          
+          /* Set a style for the submit button */
+          .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+          }
+          
+          .btn:hover {
+            opacity: 1;
+          } 
+          table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          }
+          th, td {
+            padding: 5px;
+            text-align: left;
+          }
+          .floatLeft {width:70% ;float:left }
+          .floatRight {width:30% ;float:right;height: 10; }
+          
+	</style> 
+</head> 
+<body>
+    <div class="bg-img">
+      <div class="floatleft">
+        <section style="padding-left: 300px;" calss="table">
+            <table >
+                <caption style="text-align:left"><h1>View_staff</h1></caption>
+                <tr>
+                    <th>Login_id</th>   
+                    <th>User_SSN</th>
+                    <th>User_Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>Role</th>
+                <tr>
+                    {% for a in rows %}
+                        <tr>
+                           <td>{{ a.0 }}</td>
+                           <td>{{ a.1 }}</td>
+                           <td>{{ a.2 }}</td>
+                           <td>{{ a.3 }}</td>
+                           <td>{{ a.4 }}</td>
+                           <td>{{ a.5 }}</td>
+                           <td>{{ a.6 }}</td>
+                        </tr>
+                    {%endfor%} 
+                </tr>
+            </table>
+        
+        </section> 
+      </div>
+    </div> 
+</html> 
+

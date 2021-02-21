@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+{%load static%}
+<html> 
+
+<head> 
+    <style> 
+		body, html {
+            height: 100%;
+          }
+          
+          * {
+            box-sizing: border-box;
+          }
+          
+          .bg-img {
+            /* The image used */
+            background-image: url("{% static 'images/bg_menu1.jpg'%}");
+          
+            /* Control the height of the image */
+            min-height: 680px;
+          
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+          }
+          
+          /* Add styles to the form container */
+          .container {
+            position: absolute;
+            align-items: center;
+            left:450px;
+            margin: 20px;
+            max-width: 400px;
+            padding: 59px;
+            background-color:rgba(0, 160, 152, 0.479);
+          }
+          
+          /* Full-width input fields */
+            input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin:16px 30px ;
+            border: none;
+            background: #f1f1f1;
+          }
+          
+          input[type=text]:focus, input[type=password]:focus {
+            background-color: rgb(156, 16, 16);
+            outline: none;
+          }
+          
+          /* Set a style for the submit button */
+          .btn {
+            background-color: #4caf4f65;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+            display:block;
+          }
+          
+          .btn:hover {
+            opacity: 1;
+          } 
+	</style> 
+</head> 
+<body>
+    <div class="bg-img">
+        <form action="/action_page.php" class="container">
+        <font color="white">
+          <h1>Admin_Menu</h1>
+          <button type="submit" class="btn" formaction="/drug">Add Drug Details</button>
+          
+          <button type="submit" class="btn" formaction="/viewuser">View Users Details</button>
+
+          <button type="submit" class="btn" formaction="/usert">Add A New User</button>
+          
+          <button type="submit" class="btn" formaction="/viewdrugs">View Drugs Details</button>
+        
+          <button type="submit" class="btn" formaction="/viewsales">View Total Sales</button>
+          
+          <button type="submit" class="btn" formaction="/delete">Manage Store</button>
+          
+          <button type="submit" class="btn" formaction="/manage">supplier and manufacturer details</button>
+
+          <button type="submit" class="btn" formaction="/viewstock">View Stock</button>
+          
+          <button type="submit" class="btn" formaction="/logout">Logout</button>
+        </form>
+      </div>
+</body>
+
+</html> 
